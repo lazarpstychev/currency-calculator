@@ -174,7 +174,7 @@
 <body>
     <div class="container">
         <h1>💶 Калкулатор за ресто</h1>
-        <p class="subtitle">България е в еврозоната от 01.01.2022</p>
+        <p class="subtitle">България е в еврозоната от 01.01.2026</p>
         
         <form id="changeForm">
             <div class="form-group">
@@ -241,7 +241,7 @@
             }
             
             if (paidInBGN < productPrice) {
-                errorDiv.textContent = 'Грешка: Платената сума е по-голяма от цената на стоката!';
+                errorDiv.textContent = 'Грешка: Платената сума е по-малка от цената на стоката!';
                 errorDiv.classList.add('show');
                 resultDiv.classList.remove('show');
                 return;
@@ -250,11 +250,12 @@
             const changeBGN = paidInBGN - productPrice;
             const changeEUR = changeBGN / EXCHANGE_RATE;
             
-            document.getElementById('changeBGN').textContent = changeBGN.toFixed(4) + ' лв';
+            document.getElementById('changeBGN').textContent = changeBGN.toFixed(2) + ' лв';
             document.getElementById('changeEUR').textContent = changeEUR.toFixed(2) + ' €';
             
             resultDiv.classList.add('show');
         });
     </script>
 </body>
+
 </html>
